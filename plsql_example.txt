@@ -1,0 +1,13 @@
+create  or replace procedure p1
+as
+   CURSOR c_emp IS
+      SELECT *
+        FROM emp
+       WHERE sal< 5000;
+BEGIN
+   FOR i IN c_emp
+   LOOP
+       
+insert into e1 values (i.sal);
+   END LOOP;
+END;
